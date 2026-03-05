@@ -28,21 +28,14 @@ def get_sentences(text):
     - Handle multiple punctuation (!! or ...)
     Returns: List of sentences
     """
-    #\
     sentenceList = []
-    sentenceList = text.split(".")
-    # #sentenceList = sent_tokenize(text)
-    # abbreviations = r'(Mr|Mrs|Ms|Dr|Prof|Rev|Jr|Sr|St|Mt)'
-    # domains = r'(com|org|net|edu|gov|co|io|uk|ca)'
-    
-    # pattern = r'(?<!Mr)(?<!Mrs)(?<!Ms)(?<!Dr)(?<!Prof)(?<!Rev)(?<!Jr)(?<!Sr)(?<!St)(?<!Mt)\.'
+    pattern = r'(?<!Mr)(?<!Mrs)(?<!Ms)(?<!Dr)(?<!Prof)(?<!Rev)(?<!Jr)(?<!Sr)(?<!St)(?<!Mt)'
+    sentenceList = re.split(pattern + r"\.\s+", text)
 
-    # #pattern = rf'(?s)(.*?)(?<!\d)(?<!\b{abbreviations})\.(?<!\d)(?<!\.(?:{domains}))[.!?](?:\s+|$)'
-    # sentenceList = re.findall(pattern, text)
-    
-    # return [sentence.strip() for sentence in sentenceList if sentence.strip()]
     return sentenceList
 
+sampleText = "This is a test sentence with some abbreviations like Dr. or other things. There is a river outside."
+print(get_sentences(sampleText))
 
 def get_ngrams(words, n):
     """
