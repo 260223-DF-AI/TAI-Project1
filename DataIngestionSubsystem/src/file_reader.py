@@ -27,6 +27,10 @@ def load_data(filepath):
     return df
 
 def clean_data(df: pd.DataFrame):
+   
+    # if city is chicago but no state is present, fill in with IL
+    df.loc[df["CITY"] == "CHICAGO", "STATE"] = "IL"
+
     # Handle rows with None values/missing data: Drop row
     df.dropna(inplace=True)
 
@@ -34,7 +38,13 @@ def clean_data(df: pd.DataFrame):
     df.drop_duplicates(inplace=True)
 
     # drop LOCATION and ADDRESS NUMBER START columns
-    df.drop(columns=["LOCATION", "ADDRESS NUMBER START"], inplace=True)
+    df.drop(columns=["ADDRESS NUMBER START", "ADDRESS NUMBER","STREET DIRECTION", "WARD PRECINCT","LOCATION", "Zip Codes","Boundaries - ZIP Codes", "Census Tracts","Wards"], inplace=True)
+
+    # remove time part from date (example: 2019-11-25T00:00:00.000 becomes just 2019-11-25)
+    df["ISSUED DATE"] = pd.to_datetime(df["ISSUED DATE"]).dt.date
+    df["EXPIRATION DATE"] = pd.to_datetime(df["EXPIRATION DATE"]).dt.date
+    df["PAYMENT DATE"] = pd.to_datetime(df["PAYMENT DATE"]).dt.date
+
 
     # Standardize text columns
     strCols = [col for col in df.columns if df[col].dtype == 'str'] # not sure how necessary this line is
@@ -78,5 +88,5 @@ def compare_two_colums(df: pd.DataFrame, colName1: str, colName2: str) -> bool:
     return True if len(redundantData) == df[colName1].size else False
 
 # The primary key for our main table will probably be PERMIT NUMBER
-#df = load_data("/../data/sidewalk-cafe-permits.csv")
-#print(df)
+#df = load_data("../data/small-chunk.csv")
+#print(df["EXPIRATION DATE"])
