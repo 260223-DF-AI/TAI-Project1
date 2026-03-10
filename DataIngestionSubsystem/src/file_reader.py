@@ -4,13 +4,22 @@ def load_data(filepath):
     """
     Creates a DataFrame object from the given file, cleans it, then returns it
     """
+    dotIndex = filepath.rfind('.')
     try:
-        df = pd.read_csv(filepath,
-            dtype={'ZIP CODE':'str'}, # Make ZIP CODE a str
-            date_format="%Y-%m-%dT%H:%M:%S.%f",
-            parse_dates=['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE'],
-            na_values=None # We can change this later
-        )
+        if(filepath[dotIndex + 1].lower() == 'csv'):
+            df = pd.read_csv(filepath,
+                dtype={'ZIP CODE':'str'}, # Make ZIP CODE a str
+                date_format="%Y-%m-%dT%H:%M:%S.%f",
+                parse_dates=['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE'],
+                na_values=None # We can change this later
+            )
+        elif(filepath[dotIndex + 1].lower() == 'json'):
+            df = pd.read_json(filepath,
+                dtype={'ZIP CODE':'str'}, # Make ZIP CODE a str
+                date_format="%Y-%m-%dT%H:%M:%S.%f",
+                parse_dates=['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE'],
+                na_values=None # We can change this later
+            )
     except FileNotFoundError:
         # Eventually we will probably also want to log this
         print(f"Given filepath ({filepath}) does not exist.")
@@ -54,6 +63,9 @@ def find_empty_columns(df: pd.DataFrame) -> list:
         if(df[col].count() == 0):
             emptyCols.append(col)
     return emptyCols
+
+def check_uniform_col_vals(df: pd.DataFrame, col: str) -> bool:
+    return len(df[col].unique()) == 1
 
 # This is because we had two similarly named columns ("ZIP CODE" and "Zip Codes")
 def compare_two_colums(df: pd.DataFrame, colName1: str, colName2: str) -> bool:
