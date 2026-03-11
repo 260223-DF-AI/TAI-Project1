@@ -7,24 +7,59 @@ def load_data(filepath):
     dotIndex = filepath.rfind('.')
     try:
         if(filepath[dotIndex + 1].lower() == 'csv'):
-            df = pd.read_csv(filepath,
-                dtype={'ZIP CODE':'str'}, # Make ZIP CODE a str
-                date_format="%Y-%m-%dT%H:%M:%S.%f",
-                parse_dates=['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE'],
-                na_values=None # We can change this later
+            df = pd.read_csv(
+                filepath,
+                dtype={
+                    "ZIP CODE": "string",
+                    "ADDRESS NUMBER": "string"
+                },
+                date_format = "%Y-%m-%dT%H:%M:%S.%f",
+                parse_dates=['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE']
             )
         elif(filepath[dotIndex + 1].lower() == 'json'):
-            df = pd.read_json(filepath,
-                dtype={'ZIP CODE':'str'}, # Make ZIP CODE a str
-                date_format="%Y-%m-%dT%H:%M:%S.%f",
-                parse_dates=['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE'],
-                na_values=None # We can change this later
+            df = pd.read_json(
+                filepath,
+                dtype={
+                    "ZIP CODE": "string",
+                    "ADDRESS NUMBER": "string"
+                },
+                date_format = "%Y-%m-%dT%H:%M:%S.%f",
+                parse_dates=['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE']
             )
     except FileNotFoundError:
         # Eventually we will probably also want to log this
         print(f"Given filepath ({filepath}) does not exist.")
-    clean_data(df)
+    # df_validated, df_invalid = validate_normalize_data(df)
     return df
+
+def validate_normalize_data(df):
+
+    # Ensure numeric columns
+    number_cols = ['PERMIT NUMBER', 'ACCOUNT NUMBER', 'SITE NUMBER',
+                   'LATITUDE', 'LONGITUDE']
+
+    df[number_cols] = df[number_cols].apply(pd.to_numeric, errors='coerce')
+
+    # Ensure ZIP is string
+    # df['ZIP CODE'] = df['ZIP CODE'].astype(str)
+
+    # Ensure dates
+    # date_format = "%Y-%m-%dT%H:%M:%S.%f"
+    # date_cols = ['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE']
+
+    #for col in date_cols:
+        #df[col] = pd.to_datetime(df[col], format=date_format, errors='coerce')
+
+    # a Series of booleans which states whether all of the following statements are True
+    valid_mask = (
+        (df['PERMIT NUMBER'] > 0) &
+        (df['ACCOUNT NUMBER'] > 0) &
+        (df['SITE NUMBER'] > 0)
+    )
+
+    df_validated = df[valid_mask].copy().reset_index(drop=True)
+    df_invalid = df[~valid_mask].copy().reset_index(drop=True)
+    return df_validated, df_invalid
 
 def clean_data(df: pd.DataFrame):
    
