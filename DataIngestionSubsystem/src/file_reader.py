@@ -14,7 +14,7 @@ def load_data(filepath):
     except FileNotFoundError:
         # Eventually we will probably also want to log this
         print(f"Given filepath ({filepath}) does not exist.")
-    clean_data(df)
+    # clean_data(df)
     return df
 
 def clean_data(df: pd.DataFrame):
