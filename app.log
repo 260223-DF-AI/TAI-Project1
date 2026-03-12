@@ -126,3 +126,30 @@
 22:24:28 | __main__ | INFO | creating and loading permits table
 22:24:29 | __main__ | INFO | created and loaded permits table
 22:24:29 | __main__ | INFO | Success! Tables created!
+14:32:57 | __main__ | INFO | Starting main()
+14:33:01 | __main__ | INFO | Successful file upload and dataframe creation
+14:33:01 | __main__ | INFO | Attempting to make tables
+14:33:01 | __main__ | INFO | load dotenv successful
+14:37:50 | __main__ | INFO | Starting main()
+14:37:53 | __main__ | INFO | Successful file upload and dataframe creation
+14:37:53 | __main__ | INFO | Attempting to make tables
+14:37:53 | __main__ | INFO | load dotenv successful
+14:47:22 | __main__ | INFO | Starting main()
+14:47:26 | __main__ | INFO | Successful file upload and dataframe creation
+14:47:26 | __main__ | INFO | Attempting to make tables
+14:47:26 | __main__ | INFO | load dotenv successful
+14:48:34 | __main__ | INFO | Starting main()
+14:48:36 | __main__ | INFO | Successful file upload and dataframe creation
+14:48:36 | __main__ | INFO | Attempting to make tables
+14:48:36 | __main__ | INFO | load dotenv successful
+14:49:09 | __main__ | INFO | Starting main()
+14:49:15 | __main__ | INFO | Successful file upload and dataframe creation
+14:49:15 | __main__ | INFO | Attempting to make tables
+14:49:15 | __main__ | INFO | load dotenv successful
+14:49:15 | __main__ | INFO | creating and loading businesses table
+14:49:15 | __main__ | INFO | created and loaded business table
+14:49:15 | __main__ | INFO | creating and loading locations table
+14:49:15 | __main__ | INFO | created and loaded locations table
+14:49:15 | __main__ | INFO | creating and loading permits table
+14:49:15 | __main__ | INFO | created and loaded permits table
+14:49:15 | __main__ | INFO | Success! Tables created!
