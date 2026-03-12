@@ -6,7 +6,7 @@ def load_data(filepath):
     """
     dotIndex = filepath.rfind('.')
     try:
-        if(filepath[dotIndex + 1].lower() == 'csv'):
+        if(filepath[dotIndex + 1:].lower() == 'csv'):
             df = pd.read_csv(
                 filepath,
                 dtype={
@@ -16,7 +16,7 @@ def load_data(filepath):
                 date_format = "%Y-%m-%dT%H:%M:%S.%f",
                 parse_dates=['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE']
             )
-        elif(filepath[dotIndex + 1].lower() == 'json'):
+        elif(filepath[dotIndex + 1:].lower() == 'json'):
             df = pd.read_json(
                 filepath,
                 dtype={
