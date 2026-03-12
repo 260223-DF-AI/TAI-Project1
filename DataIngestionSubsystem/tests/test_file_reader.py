@@ -15,10 +15,12 @@ class TestFileReader:
 
         # Arrange
         columns = [
-            "PERMIT NUMBER", "ACCOUNT NUMBER", "SITE NUMBER", "LEGAL NAME", "DOING BUSINESS AS NAME", "ISSUED DATE", "EXPIRATION DATE",
-            "PAYMENT DATE", "ADDRESS", "ADDRESS NUMBER START", "ADDRESS NUMBER", "STREET DIRECTION", "STREET", "STREET TYPE", "CITY",
-            "STATE", "ZIP CODE", "WARD", "PRECINCT", "WARD PRECINCT", "POLICE DISTRICT", "LATITUDE", "LONGITUDE", "LOCATION",
-            "Community Areas", "Zip Codes","Boundaries - ZIP Codes", "Census Tracts", "Wards"
+            "PERMIT NUMBER", "ACCOUNT NUMBER", "SITE NUMBER", "LEGAL NAME", "DOING BUSINESS AS NAME",
+            "ISSUED DATE", "EXPIRATION DATE", "PAYMENT DATE", "ADDRESS", "ADDRESS NUMBER START",
+            "ADDRESS NUMBER", "STREET DIRECTION", "STREET", "STREET TYPE", "CITY", "STATE",
+            "ZIP CODE", "WARD", "PRECINCT", "WARD PRECINCT", "POLICE DISTRICT", "LATITUDE",
+            "LONGITUDE", "LOCATION", "Community Areas", "Zip Codes", "Boundaries - ZIP Codes",
+            "Census Tracts", "Wards"
         ]
 
         # Act + Assert correct file
@@ -53,7 +55,7 @@ class TestFileReader:
         assert duplicate_count == 1
 
         # Act + Assert - dropped columns
-        cols_dropped = ["ADDRESS NUMBER START", "ADDRESS NUMBER","STREET DIRECTION", "WARD PRECINCT","LOCATION", "Zip Codes","Boundaries - ZIP Codes", "Census Tracts","Wards"]
+        cols_dropped = ["ADDRESS NUMBER START", "WARD PRECINCT","LOCATION", "Zip Codes","Boundaries - ZIP Codes", "Census Tracts","Wards"]
         for col in cols_dropped:
             assert col not in new_file.columns
 
