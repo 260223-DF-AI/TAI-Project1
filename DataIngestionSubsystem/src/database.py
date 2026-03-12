@@ -1,5 +1,4 @@
 from datetime import date
-import os
 import psycopg2
 from sqlalchemy import Date, ForeignKey, Integer, Numeric, String, create_engine
 from dotenv import load_dotenv
