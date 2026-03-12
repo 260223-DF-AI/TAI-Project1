@@ -8,9 +8,9 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, Mapped, mapped_column, relat
 
 # build schema in sql and have python do the rest
 
-load_dotenv()
-CS = os.getenv('CS')
-engine = create_engine(CS, echo=True)
+# load_dotenv()
+# CS = os.getenv('CS')
+# engine = create_engine(CS, echo=True)
 
 # query = f'SELECT * FROM {table_name}'
 # df = pd.read_sql(query, engine)
@@ -24,7 +24,7 @@ class Base(DeclarativeBase):
 class Business(Base):
     __tablename__ = 'businesses'
 
-    account_num: Mapped[int] = mapped_column(Integer, primary_key=True)
+    account_num: Mapped[int] = mapped_column("ACCOUNT NUMBER", Integer, primary_key=True)
     legal_name: Mapped[str] = mapped_column("LEGAL NAME", String(500), nullable=False)
     opper_name: Mapped[str] = mapped_column("DOING BUSINESS AS NAME", String(500), nullable=False)
 
@@ -33,14 +33,14 @@ class Business(Base):
 class Location(Base):
     __tablename__ = 'locations'
 
-    site_num: Mapped[int] = mapped_column(Integer, primary_key=True)
+    site_num: Mapped[int] = mapped_column("SITE NUMBER", Integer, primary_key=True)
     lat: Mapped[float] = mapped_column("LATITUDE", Numeric(14,11), nullable=True)
     long: Mapped[float] = mapped_column("LONGITUDE", Numeric(14,11), nullable=True)
-    address_num: Mapped[int] = mapped_column("ADDRESS NUMBER", Integer, nullable=False)
+    address_num: Mapped[int] = mapped_column("ADDRESS NUMBER", String(30), nullable=False)
     street_dir: Mapped[str] = mapped_column("STREET DIRECTION", String(1), nullable=True)
     street: Mapped[str] = mapped_column("STREET", String(100), nullable=False)
     street_type: Mapped[str] = mapped_column("STREET TYPE", String(30))
-    zipcode: Mapped[str] = mapped_column("ZIP CODE", String(15), nullable=False)
+    zipcode: Mapped[str] = mapped_column("ZIP CODE", String(30), nullable=False)
 
     permit: Mapped["Permit"] = relationship(back_populates='location')
 
@@ -57,4 +57,4 @@ class Permit(Base):
     businesses: Mapped[list["Business"]] = relationship(back_populates='permits')
     sites: Mapped[list["Location"]] = relationship(back_populates="permits")
 
-Base.metadata.create_all(engine)
+#Base.metadata.create_all(engine)

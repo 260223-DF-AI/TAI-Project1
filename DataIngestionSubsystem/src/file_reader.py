@@ -1,4 +1,5 @@
 import pandas as pd
+from .logger import *
 
 def load_data(filepath):
     """
@@ -6,7 +7,7 @@ def load_data(filepath):
     """
     dotIndex = filepath.rfind('.')
     try:
-        if(filepath[dotIndex + 1].lower() == 'csv'):
+        if(filepath[dotIndex + 1:].lower() == 'csv'):
             df = pd.read_csv(
                 filepath,
                 dtype={
@@ -16,7 +17,7 @@ def load_data(filepath):
                 date_format = "%Y-%m-%dT%H:%M:%S.%f",
                 parse_dates=['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE']
             )
-        elif(filepath[dotIndex + 1].lower() == 'json'):
+        elif(filepath[dotIndex + 1:].lower() == 'json'):
             df = pd.read_json(
                 filepath,
                 dtype={
@@ -73,7 +74,7 @@ def clean_data(df: pd.DataFrame):
     df.drop_duplicates(inplace=True)
 
     # drop LOCATION and ADDRESS NUMBER START columns
-    df.drop(columns=["ADDRESS NUMBER START", "ADDRESS NUMBER","STREET DIRECTION", "WARD PRECINCT","LOCATION", "Zip Codes","Boundaries - ZIP Codes", "Census Tracts","Wards"], inplace=True)
+    df.drop(columns=["ADDRESS NUMBER START", "WARD PRECINCT","LOCATION", "Zip Codes","Boundaries - ZIP Codes", "Census Tracts","Wards"], inplace=True)
 
     # remove time part from date (example: 2019-11-25T00:00:00.000 becomes just 2019-11-25)
     df["ISSUED DATE"] = pd.to_datetime(df["ISSUED DATE"]).dt.date

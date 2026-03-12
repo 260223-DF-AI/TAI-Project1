@@ -1,0 +1,128 @@
+19:09:21 | __main__ | INFO | Starting main()
+19:17:51 | __main__ | INFO | Starting main()
+19:19:16 | __main__ | INFO | Starting main()
+19:20:07 | __main__ | INFO | Starting main()
+19:21:00 | __main__ | INFO | Starting main()
+19:21:41 | __main__ | INFO | Starting main()
+19:23:05 | __main__ | INFO | Starting main()
+19:25:01 | __main__ | INFO | Starting main()
+19:25:46 | __main__ | INFO | Starting main()
+19:26:56 | __main__ | INFO | Starting main()
+19:29:49 | __main__ | INFO | Starting main()
+19:32:13 | __main__ | INFO | Starting main()
+19:32:59 | __main__ | INFO | Starting main()
+19:33:00 | __main__ | INFO | Successful file upload and dataframe creation!
+19:33:00 | __main__ | INFO | Attempting to make tables
+19:40:32 | __main__ | INFO | Starting main()
+19:40:34 | __main__ | INFO | Successful file upload and dataframe creation!
+19:40:34 | __main__ | INFO | Attempting to make tables
+19:43:09 | __main__ | INFO | Starting main()
+19:43:10 | __main__ | INFO | Successful file upload and dataframe creation!
+19:43:10 | __main__ | INFO | Attempting to make tables
+19:47:23 | __main__ | INFO | Starting main()
+19:47:28 | __main__ | INFO | Successful file upload and dataframe creation!
+19:47:28 | __main__ | INFO | Attempting to make tables
+19:47:28 | __main__ | INFO | load dotenv successful
+19:48:23 | __main__ | INFO | Starting main()
+19:48:24 | __main__ | INFO | Successful file upload and dataframe creation!
+19:48:24 | __main__ | INFO | Attempting to make tables
+19:48:24 | __main__ | INFO | load dotenv successful
+19:50:43 | __main__ | INFO | Starting main()
+19:50:44 | __main__ | INFO | Successful file upload and dataframe creation!
+19:50:44 | __main__ | INFO | Attempting to make tables
+19:50:44 | __main__ | INFO | load dotenv successful
+19:50:44 | __main__ | INFO | Success! Tables created!
+20:17:58 | __main__ | INFO | Starting main()
+20:18:02 | __main__ | INFO | Successful file upload and dataframe creation!
+20:18:02 | __main__ | INFO | Attempting to make tables
+20:18:02 | __main__ | INFO | load dotenv successful
+20:20:22 | __main__ | INFO | Starting main()
+20:20:25 | __main__ | INFO | Successful file upload and dataframe creation!
+20:20:25 | __main__ | INFO | Attempting to make tables
+20:20:25 | __main__ | INFO | load dotenv successful
+20:39:16 | __main__ | INFO | Starting main()
+20:39:18 | __main__ | INFO | Successful file upload and dataframe creation!
+20:39:18 | __main__ | INFO | Attempting to make tables
+20:39:18 | __main__ | INFO | load dotenv successful
+20:44:08 | __main__ | INFO | Starting main()
+20:44:09 | __main__ | INFO | Successful file upload and dataframe creation!
+20:44:09 | __main__ | INFO | Attempting to make tables
+20:44:09 | __main__ | INFO | load dotenv successful
+20:49:54 | __main__ | INFO | Starting main()
+20:49:55 | __main__ | INFO | Successful file upload and dataframe creation!
+20:49:55 | __main__ | INFO | Attempting to make tables
+20:49:55 | __main__ | INFO | load dotenv successful
+21:13:31 | __main__ | INFO | Starting main()
+21:13:33 | __main__ | INFO | Successful file upload and dataframe creation!
+21:13:33 | __main__ | INFO | Attempting to make tables
+21:13:33 | __main__ | INFO | load dotenv successful
+21:16:54 | __main__ | INFO | Starting main()
+21:16:56 | __main__ | INFO | Successful file upload and dataframe creation!
+21:16:56 | __main__ | INFO | Attempting to make tables
+21:16:56 | __main__ | INFO | load dotenv successful
+21:20:33 | __main__ | INFO | Starting main()
+21:20:35 | __main__ | INFO | Successful file upload and dataframe creation!
+21:20:35 | __main__ | INFO | Attempting to make tables
+21:20:35 | __main__ | INFO | load dotenv successful
+21:21:46 | __main__ | INFO | Starting main()
+21:21:48 | __main__ | INFO | Successful file upload and dataframe creation!
+21:21:48 | __main__ | INFO | Attempting to make tables
+21:21:48 | __main__ | INFO | load dotenv successful
+21:32:48 | __main__ | INFO | Starting main()
+21:32:49 | __main__ | INFO | Successful file upload and dataframe creation!
+21:32:49 | __main__ | INFO | Attempting to make tables
+21:32:49 | __main__ | INFO | load dotenv successful
+21:34:04 | __main__ | INFO | Starting main()
+21:34:05 | __main__ | INFO | Successful file upload and dataframe creation!
+21:34:05 | __main__ | INFO | Attempting to make tables
+21:34:05 | __main__ | INFO | load dotenv successful
+21:42:51 | __main__ | INFO | Starting main()
+21:42:53 | __main__ | INFO | Successful file upload and dataframe creation!
+21:42:53 | __main__ | INFO | Attempting to make tables
+21:42:53 | __main__ | INFO | load dotenv successful
+21:45:53 | __main__ | INFO | Starting main()
+21:45:53 | __main__ | INFO | Successful file upload and dataframe creation!
+21:45:53 | __main__ | INFO | Attempting to make tables
+21:45:53 | __main__ | INFO | load dotenv successful
+21:56:23 | __main__ | INFO | Starting main()
+21:56:24 | __main__ | INFO | Successful file upload and dataframe creation!
+21:56:24 | __main__ | INFO | Attempting to make tables
+21:56:24 | __main__ | INFO | load dotenv successful
+21:57:35 | __main__ | INFO | Starting main()
+21:57:37 | __main__ | INFO | Successful file upload and dataframe creation!
+21:57:37 | __main__ | INFO | Attempting to make tables
+21:57:37 | __main__ | INFO | load dotenv successful
+22:00:42 | __main__ | INFO | Starting main()
+22:00:44 | __main__ | INFO | Successful file upload and dataframe creation!
+22:00:44 | __main__ | INFO | Attempting to make tables
+22:00:44 | __main__ | INFO | load dotenv successful
+22:00:44 | __main__ | INFO | Success! Tables created!
+22:05:53 | __main__ | INFO | Starting main()
+22:05:54 | __main__ | INFO | Successful file upload and dataframe creation!
+22:05:54 | __main__ | INFO | Attempting to make tables
+22:05:54 | __main__ | INFO | load dotenv successful
+22:05:54 | __main__ | INFO | Success! Tables created!
+22:13:14 | __main__ | INFO | Starting main()
+22:13:17 | __main__ | INFO | Successful file upload and dataframe creation!
+22:13:17 | __main__ | INFO | Attempting to make tables
+22:13:17 | __main__ | INFO | load dotenv successful
+22:16:54 | __main__ | INFO | Starting main()
+22:16:56 | __main__ | INFO | Successful file upload and dataframe creation!
+22:16:56 | __main__ | INFO | Attempting to make tables
+22:16:56 | __main__ | INFO | load dotenv successful
+22:20:35 | __main__ | INFO | Starting main()
+22:20:36 | __main__ | INFO | Successful file upload and dataframe creation!
+22:20:36 | __main__ | INFO | Attempting to make tables
+22:20:36 | __main__ | INFO | load dotenv successful
+22:20:38 | __main__ | INFO | Success! Tables created!
+22:24:22 | __main__ | INFO | Starting main()
+22:24:26 | __main__ | INFO | Successful file upload and dataframe creation
+22:24:26 | __main__ | INFO | Attempting to make tables
+22:24:26 | __main__ | INFO | load dotenv successful
+22:24:26 | __main__ | INFO | creating and loading businesses table
+22:24:27 | __main__ | INFO | created and loaded business table
+22:24:27 | __main__ | INFO | creating and loading locations table
+22:24:28 | __main__ | INFO | created and loaded locations table
+22:24:28 | __main__ | INFO | creating and loading permits table
+22:24:29 | __main__ | INFO | created and loaded permits table
+22:24:29 | __main__ | INFO | Success! Tables created!
