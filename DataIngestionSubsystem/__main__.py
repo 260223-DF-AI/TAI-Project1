@@ -27,6 +27,7 @@ def main():
             filepath = files[choice - 1].name
             df = load_data(f"DataIngestionSubsystem/data/{filepath}")
             df = clean_data(df)
+            df, invalid_df = validate_normalize_data(df)
             print()
             logger.info("Successful file upload and dataframe creation")
             print()
