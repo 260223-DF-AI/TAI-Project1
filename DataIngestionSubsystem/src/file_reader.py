@@ -109,13 +109,16 @@ def clean_data(df: pd.DataFrame):
     return df
 
 def create_businesses_df(df: pd.DataFrame):
-    return df[['account_num','legal_name']].drop_duplicates()
+    busDF = df.copy()
+    return busDF[['account_num','legal_name']].drop_duplicates()
 
 def create_locations_df(df: pd.DataFrame):
-    return df[['loc_id', 'site_num', 'address_num', 'street_dir', 'street', 'street_type', 'zipcode', 'latitude', 'longitude']].drop_duplicates()
+    locDf = df.copy()
+    return locDf[['loc_id', 'site_num', 'address_num', 'street_dir', 'street', 'street_type', 'zipcode', 'latitude', 'longitude']].drop_duplicates()
 
 def create_permits_df(df: pd.DataFrame):
-    return df[['permit_num', 'account_num', 'loc_id', 'opper_name', 'issued_date', 'expiration_date', 'payment_date']]
+    permDf = df.copy()
+    return permDf[['permit_num', 'account_num', 'loc_id', 'opper_name', 'issued_date', 'expiration_date', 'payment_date']]
 
 # To check what columns we can use for a primary key
 def is_unique_column(df: pd.DataFrame, colName: str) -> bool:
