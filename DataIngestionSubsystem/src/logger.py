@@ -1,6 +1,6 @@
 import logging
 
-def setup_logger(name, logfile="app.log"):
+def setup_logger(name, logfile="DataIngestionSubsystem/app.log"):
     """Configure a custom logger."""
     logger = logging.getLogger(name)
 
