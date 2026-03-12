@@ -1,5 +1,5 @@
 import pandas as pd
-from .logger import *
+#from .logger import *
 
 def load_data(filepath):
     """
@@ -81,12 +81,41 @@ def clean_data(df: pd.DataFrame):
     df["EXPIRATION DATE"] = pd.to_datetime(df["EXPIRATION DATE"]).dt.date
     df["PAYMENT DATE"] = pd.to_datetime(df["PAYMENT DATE"]).dt.date
 
-
     # Standardize text columns
     strCols = [col for col in df.columns if df[col].dtype == 'str'] # not sure how necessary this line is
     df[strCols] = df[strCols].apply(lambda col: col.str.upper())
 
+    # Renaming columns for the database
+    df.rename(columns={
+        'PERMIT NUMBER': 'permit_num',
+        'ACCOUNT NUMBER': 'account_num',
+        'SITE NUMBER': 'site_num',
+        'LEGAL NAME': 'legal_name',
+        'DOING BUSINESS AS NAME': 'opper_name',
+        'ISSUED DATE': 'issued_date',
+        'EXPIRATION DATE': 'expiration_date',
+        'PAYMENT DATE': 'payment_date',
+        'ADDRESS NUMBER': 'address_num',
+        'STREET DIRECTION': 'street_dir',
+        'STREET': 'street',
+        'STREET TYPE': 'street_type',
+        'ZIP CODE': 'zipcode',
+        'LATITUDE': 'latitude',
+        'LONGITUDE': 'longitude'
+    }, inplace=True)
+
+    df['loc_id'] = [indx for indx, row in df.iterrows()]
+
     return df
+
+def create_businesses_df(df: pd.DataFrame):
+    return df[['account_num','legal_name']].drop_duplicates()
+
+def create_locations_df(df: pd.DataFrame):
+    return df[['loc_id', 'site_num', 'address_num', 'street_dir', 'street', 'street_type', 'zipcode', 'latitude', 'longitude']].drop_duplicates()
+
+def create_permits_df(df: pd.DataFrame):
+    return df[['permit_num', 'account_num', 'loc_id', 'opper_name', 'issued_date', 'expiration_date', 'payment_date']]
 
 # To check what columns we can use for a primary key
 def is_unique_column(df: pd.DataFrame, colName: str) -> bool:
