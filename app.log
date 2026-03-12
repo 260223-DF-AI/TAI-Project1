@@ -126,3 +126,242 @@
 22:24:28 | __main__ | INFO | creating and loading permits table
 22:24:29 | __main__ | INFO | created and loaded permits table
 22:24:29 | __main__ | INFO | Success! Tables created!
+08:53:33 | __main__ | INFO | Starting main()
+08:53:36 | __main__ | INFO | Successful file upload and dataframe creation
+08:53:36 | __main__ | INFO | Attempting to make tables
+08:53:36 | __main__ | INFO | load dotenv successful
+08:53:36 | __main__ | INFO | creating and loading businesses table
+08:53:36 | __main__ | INFO | created and loaded business table
+08:53:36 | __main__ | INFO | creating and loading locations table
+08:53:36 | __main__ | INFO | created and loaded locations table
+08:53:36 | __main__ | INFO | creating and loading permits table
+08:53:36 | __main__ | INFO | created and loaded permits table
+08:53:36 | __main__ | INFO | Success! Tables created!
+08:54:08 | __main__ | INFO | Starting main()
+08:54:23 | __main__ | INFO | Successful file upload and dataframe creation
+08:54:23 | __main__ | INFO | Attempting to make tables
+08:54:23 | __main__ | INFO | load dotenv successful
+08:54:23 | __main__ | INFO | creating and loading businesses table
+08:54:23 | __main__ | INFO | created and loaded business table
+08:54:23 | __main__ | INFO | creating and loading locations table
+08:54:24 | __main__ | INFO | created and loaded locations table
+08:54:24 | __main__ | INFO | creating and loading permits table
+08:54:25 | __main__ | INFO | created and loaded permits table
+08:54:25 | __main__ | INFO | Success! Tables created!
+08:57:40 | __main__ | INFO | Starting main()
+08:57:41 | __main__ | INFO | Successful file upload and dataframe creation
+08:57:41 | __main__ | INFO | Attempting to make tables
+08:57:41 | __main__ | INFO | load dotenv successful
+08:57:41 | __main__ | INFO | creating and loading businesses table
+08:57:41 | __main__ | INFO | created and loaded business table
+08:57:41 | __main__ | INFO | creating and loading locations table
+08:57:41 | __main__ | INFO | created and loaded locations table
+08:57:41 | __main__ | INFO | creating and loading permits table
+08:57:42 | __main__ | INFO | created and loaded permits table
+08:57:42 | __main__ | INFO | Success! Tables created!
+08:57:48 | __main__ | INFO | Starting main()
+08:57:50 | __main__ | INFO | Successful file upload and dataframe creation
+08:57:50 | __main__ | INFO | Attempting to make tables
+08:57:50 | __main__ | INFO | load dotenv successful
+08:57:50 | __main__ | INFO | creating and loading businesses table
+08:57:50 | __main__ | INFO | created and loaded business table
+08:57:50 | __main__ | INFO | creating and loading locations table
+08:57:51 | __main__ | INFO | created and loaded locations table
+08:57:51 | __main__ | INFO | creating and loading permits table
+08:57:51 | __main__ | INFO | created and loaded permits table
+08:57:51 | __main__ | INFO | Success! Tables created!
+08:58:19 | __main__ | INFO | Starting main()
+08:59:00 | __main__ | INFO | Starting main()
+08:59:00 | __main__ | ERROR | No valid files found in the data folder. Please upload a file with .csv or .json extension
+09:08:17 | __main__ | INFO | Starting main()
+09:08:18 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:08:18 | __main__ | INFO | Successful file upload and dataframe creation
+09:08:18 | __main__ | INFO | Attempting to connect to database
+09:08:18 | __main__ | INFO | Connection created
+09:08:18 | __main__ | INFO | Creating and populating 'businesses' table
+09:11:33 | __main__ | INFO | Starting main()
+09:11:35 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:11:35 | __main__ | INFO | Successful file upload and dataframe creation
+09:11:35 | __main__ | INFO | Attempting to connect to database
+09:11:35 | __main__ | INFO | Connection created
+09:11:35 | __main__ | INFO | Creating and populating 'businesses' table
+09:13:30 | __main__ | INFO | Starting main()
+09:13:32 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:13:32 | __main__ | INFO | Successful file upload and dataframe creation
+09:13:32 | __main__ | INFO | Attempting to connect to database
+09:13:32 | __main__ | INFO | Connection created
+09:13:32 | __main__ | INFO | Creating and populating 'businesses' table
+09:14:14 | __main__ | INFO | Starting main()
+09:14:18 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:14:18 | __main__ | INFO | Successful file upload and dataframe creation
+09:14:18 | __main__ | INFO | Attempting to connect to database
+09:14:18 | __main__ | INFO | Connection created
+09:14:18 | __main__ | INFO | Creating and populating 'businesses' table
+09:14:51 | __main__ | INFO | Starting main()
+09:14:52 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:14:52 | __main__ | INFO | Successful file upload and dataframe creation
+09:14:52 | __main__ | INFO | Attempting to connect to database
+09:14:52 | __main__ | INFO | Connection created
+09:14:52 | __main__ | INFO | Creating and populating 'businesses' table
+09:14:53 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:14:53 | __main__ | INFO | Creating and populating 'locations' table
+09:14:53 | __main__ | INFO | Successful table creation and population for 'locations'
+09:14:53 | __main__ | INFO | Creating and populating 'permits' table
+09:15:46 | __main__ | INFO | Starting main()
+09:15:48 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:15:48 | __main__ | INFO | Successful file upload and dataframe creation
+09:15:48 | __main__ | INFO | Attempting to connect to database
+09:15:48 | __main__ | INFO | Connection created
+09:15:48 | __main__ | INFO | Creating and populating 'businesses' table
+09:15:48 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:15:48 | __main__ | INFO | Creating and populating 'locations' table
+09:15:48 | __main__ | INFO | Successful table creation and population for 'locations'
+09:15:48 | __main__ | INFO | Creating and populating 'permits' table
+09:15:57 | __main__ | INFO | sidewalk-cafe-permits.csv chosen, please wait while the program attempts to read file and create dataframe
+09:15:58 | __main__ | INFO | Successful file upload and dataframe creation
+09:15:58 | __main__ | INFO | Attempting to connect to database
+09:15:58 | __main__ | INFO | Connection created
+09:15:58 | __main__ | INFO | Creating and populating 'businesses' table
+09:15:58 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:15:58 | __main__ | INFO | Creating and populating 'locations' table
+09:15:59 | __main__ | INFO | Successful table creation and population for 'locations'
+09:15:59 | __main__ | INFO | Creating and populating 'permits' table
+09:18:21 | __main__ | INFO | Starting main()
+09:18:22 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:18:22 | __main__ | INFO | Successful file upload and dataframe creation
+09:18:22 | __main__ | INFO | Attempting to connect to database
+09:18:22 | __main__ | INFO | Connection created
+09:18:22 | __main__ | INFO | Creating and populating 'businesses' table
+09:18:22 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:18:22 | __main__ | INFO | Creating and populating 'locations' table
+09:18:22 | __main__ | INFO | Successful table creation and population for 'locations'
+09:18:22 | __main__ | INFO | Creating and populating 'permits' table
+09:19:08 | __main__ | INFO | Starting main()
+09:19:10 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:19:10 | __main__ | INFO | Successful file upload and dataframe creation
+09:19:10 | __main__ | INFO | Attempting to connect to database
+09:19:10 | __main__ | INFO | Connection created
+09:19:10 | __main__ | INFO | Creating and populating 'businesses' table
+09:19:10 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:19:10 | __main__ | INFO | Creating and populating 'locations' table
+09:19:10 | __main__ | INFO | Successful table creation and population for 'locations'
+09:19:10 | __main__ | INFO | Creating and populating 'permits' table
+09:19:54 | __main__ | INFO | Starting main()
+09:19:55 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:19:55 | __main__ | INFO | Successful file upload and dataframe creation
+09:19:55 | __main__ | INFO | Attempting to connect to database
+09:19:55 | __main__ | INFO | Connection created
+09:19:55 | __main__ | INFO | Creating and populating 'businesses' table
+09:19:55 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:19:55 | __main__ | INFO | Creating and populating 'locations' table
+09:19:55 | __main__ | INFO | Successful table creation and population for 'locations'
+09:19:55 | __main__ | INFO | Creating and populating 'permits' table
+09:21:13 | __main__ | INFO | Starting main()
+09:21:16 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:21:16 | __main__ | INFO | Successful file upload and dataframe creation
+09:21:16 | __main__ | INFO | Attempting to connect to database
+09:21:16 | __main__ | INFO | Connection created
+09:21:16 | __main__ | INFO | Creating and populating 'businesses' table
+09:21:16 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:21:16 | __main__ | INFO | Creating and populating 'locations' table
+09:21:16 | __main__ | INFO | Successful table creation and population for 'locations'
+09:21:16 | __main__ | INFO | Creating and populating 'permits' table
+09:24:48 | __main__ | INFO | Starting main()
+09:24:50 | __main__ | INFO | sidewalk-cafe-permits.csv chosen, please wait while the program attempts to read file and create dataframe
+09:24:50 | __main__ | INFO | Successful file upload and dataframe creation
+09:24:50 | __main__ | INFO | Attempting to connect to database
+09:24:50 | __main__ | INFO | Connection created
+09:24:50 | __main__ | INFO | Creating and populating 'businesses' table
+09:24:51 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:24:51 | __main__ | INFO | Creating and populating 'locations' table
+09:24:52 | __main__ | INFO | Successful table creation and population for 'locations'
+09:24:52 | __main__ | INFO | Creating and populating 'permits' table
+09:27:03 | __main__ | INFO | Starting main()
+09:27:05 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:27:05 | __main__ | INFO | Successful file upload and dataframe creation
+09:27:05 | __main__ | INFO | Attempting to connect to database
+09:27:05 | __main__ | INFO | Connection created
+09:27:05 | __main__ | INFO | Creating and populating 'businesses' table
+09:27:06 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:27:06 | __main__ | INFO | Creating and populating 'locations' table
+09:27:06 | __main__ | INFO | Successful table creation and population for 'locations'
+09:27:06 | __main__ | INFO | Creating and populating 'permits' table
+09:29:19 | __main__ | INFO | Starting main()
+09:29:20 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:29:20 | __main__ | INFO | Successful file upload and dataframe creation
+09:29:20 | __main__ | INFO | Attempting to connect to database
+09:29:20 | __main__ | INFO | Connection created
+09:29:20 | __main__ | INFO | Creating and populating 'businesses' table
+09:29:20 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:29:20 | __main__ | INFO | Creating and populating 'locations' table
+09:29:20 | __main__ | INFO | Successful table creation and population for 'locations'
+09:29:20 | __main__ | INFO | Creating and populating 'permits' table
+09:30:22 | __main__ | INFO | Starting main()
+09:30:24 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:30:24 | __main__ | INFO | Successful file upload and dataframe creation
+09:30:24 | __main__ | INFO | Attempting to connect to database
+09:30:24 | __main__ | INFO | Connection created
+09:30:24 | __main__ | INFO | Creating and populating 'businesses' table
+09:30:24 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:30:24 | __main__ | INFO | Creating and populating 'locations' table
+09:30:24 | __main__ | INFO | Successful table creation and population for 'locations'
+09:30:24 | __main__ | INFO | Creating and populating 'permits' table
+09:30:41 | __main__ | INFO | Starting main()
+09:30:41 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:30:41 | __main__ | INFO | Successful file upload and dataframe creation
+09:30:41 | __main__ | INFO | Attempting to connect to database
+09:30:41 | __main__ | INFO | Connection created
+09:30:41 | __main__ | INFO | Creating and populating 'businesses' table
+09:30:42 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:30:42 | __main__ | INFO | Creating and populating 'locations' table
+09:30:42 | __main__ | INFO | Successful table creation and population for 'locations'
+09:30:42 | __main__ | INFO | Creating and populating 'permits' table
+09:31:22 | __main__ | INFO | Starting main()
+09:31:23 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:31:23 | __main__ | INFO | Successful file upload and dataframe creation
+09:31:23 | __main__ | INFO | Attempting to connect to database
+09:31:23 | __main__ | INFO | Connection created
+09:31:23 | __main__ | INFO | Creating and populating 'businesses' table
+09:31:23 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:31:23 | __main__ | INFO | Creating and populating 'locations' table
+09:31:23 | __main__ | INFO | Successful table creation and population for 'locations'
+09:31:23 | __main__ | INFO | Creating and populating 'permits' table
+09:32:11 | __main__ | INFO | Starting main()
+09:32:12 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:32:12 | __main__ | INFO | Successful file upload and dataframe creation
+09:32:12 | __main__ | INFO | Attempting to connect to database
+09:32:12 | __main__ | INFO | Connection created
+09:32:12 | __main__ | INFO | Creating and populating 'businesses' table
+09:32:13 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:32:13 | __main__ | INFO | Creating and populating 'locations' table
+09:32:13 | __main__ | INFO | Successful table creation and population for 'locations'
+09:32:13 | __main__ | INFO | Creating and populating 'permits' table
+09:32:13 | __main__ | INFO | Successful table creation and population for 'permits'
+09:32:13 | __main__ | INFO | Successfully created and populated 3 tables
+09:32:13 | __main__ | INFO | Exiting
+09:32:36 | __main__ | INFO | Starting main()
+09:32:37 | __main__ | INFO | small-chunk.csv chosen, please wait while the program attempts to read file and create dataframe
+09:32:37 | __main__ | INFO | Successful file upload and dataframe creation
+09:32:37 | __main__ | INFO | Attempting to connect to database
+09:32:37 | __main__ | INFO | Connection created
+09:32:37 | __main__ | INFO | Creating and populating 'businesses' table
+09:32:37 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:32:37 | __main__ | INFO | Creating and populating 'locations' table
+09:32:37 | __main__ | INFO | Successful table creation and population for 'locations'
+09:32:37 | __main__ | INFO | Creating and populating 'permits' table
+09:32:37 | __main__ | INFO | Successful table creation and population for 'permits'
+09:32:37 | __main__ | INFO | Successfully created and populated 3 tables
+09:32:37 | __main__ | INFO | Exiting
+09:33:55 | __main__ | INFO | Starting main()
+09:33:55 | __main__ | INFO | sidewalk-cafe-permits.csv chosen, please wait while the program attempts to read file and create dataframe
+09:33:56 | __main__ | INFO | Successful file upload and dataframe creation
+09:33:56 | __main__ | INFO | Attempting to connect to database
+09:33:56 | __main__ | INFO | Connection created
+09:33:56 | __main__ | INFO | Creating and populating 'businesses' table
+09:33:56 | __main__ | INFO | Successful table creation and population for 'businesses'
+09:33:56 | __main__ | INFO | Creating and populating 'locations' table
+09:33:57 | __main__ | INFO | Successful table creation and population for 'locations'
+09:33:57 | __main__ | INFO | Creating and populating 'permits' table
+09:33:57 | __main__ | INFO | Successful table creation and population for 'permits'
+09:33:57 | __main__ | INFO | Successfully created and populated 3 tables
+09:33:57 | __main__ | INFO | Exiting
