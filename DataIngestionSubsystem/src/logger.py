@@ -5,7 +5,7 @@ def setup_logger(name, logfile="app.log"):
     logger = logging.getLogger(name)
 
     if not logger.handlers:
-        logger.setLevel(logging.DEBUG)
+        logger.setLevel(logging.INFO)
 
         formatter = logging.Formatter(
             '%(asctime)s | %(name)s | %(levelname)s | %(message)s',
