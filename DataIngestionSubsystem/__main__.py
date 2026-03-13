@@ -93,7 +93,7 @@ def main():
             logger.info("created and loaded locations table")
 
             logger.info("creating and loading permits table")
-            permitDF = create_permits_df(df)
+            permitDF = create_permits_df(df, locationDF)
             db.insert_into_permits(permitDF)
             # permitDf = df[["PERMIT NUMBER", "ACCOUNT NUMBER", "SITE NUMBER", "ISSUED DATE", "EXPIRATION DATE", "PAYMENT DATE"]]
             # permitDf.to_sql(name="permits", con=engine, index=False, if_exists = "replace", dtype={
