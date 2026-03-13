@@ -1,10 +1,12 @@
 import pandas as pd
-import pytest as py
+import pytest as pyt
 from src.file_reader import load_data, clean_data, is_unique_column, find_empty_columns, compare_two_colums, validate_normalize_data
 
 #Arrange
 file = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/small-chunk.csv")
 df_validation = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/testing_files/validation_testing.csv")
+unclean_file = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/testing_files/test_clean.csv")
+json_test = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/testing_files/file.json")
 
 class TestFileReader:
     
@@ -23,6 +25,7 @@ class TestFileReader:
 
         # Act + Assert correct file
         assert list(file.columns) == columns
+        assert list(json_test.columns) == columns
     
     def test_validation(self): 
 
@@ -49,7 +52,7 @@ class TestFileReader:
         assert new_file.isnull().sum().sum() == 0
 
         # Act + Assert drop duplicates
-        duplicate_count = (new_file['LEGAL NAME'] == "KITTY O'SHEA'S CHICAGO, LLC").sum()
+        duplicate_count = (file['legal_name'] == "KITTY O'SHEA'S CHICAGO, LLC").sum()
         assert duplicate_count == 1
 
         # Act + Assert - dropped columns
@@ -58,17 +61,25 @@ class TestFileReader:
             assert col not in new_file.columns
 
         # Act + Assert to_datetime worked
-        new_file["ISSUED DATE"].dtype == "datetime64[ns]"
-        new_file["EXPIRATION DATE"].dtype  == "datetime64[ns]"
-        new_file["PAYMENT DATE"].dtype == "datetime64[ns]"
+        new_file["issued_date"].dtype == "datetime64[ns]"
+        new_file["expiration_date"].dtype  == "datetime64[ns]"
+        new_file["payment_date"].dtype == "datetime64[ns]"
+
+        # Act + Assert Chicago Illinois
+        for index, row in new_file.iterrows():
+            if row["CITY"] == "CHICAGO":
+                assert row["STATE"] == "IL"
+
+        # Testing loc_id was created correctly
+        assert not new_file["loc_id"].empty
 
     def test_is_unique_column(self):
 
         #Act and Assert - True
-        assert is_unique_column(file, "PERMIT NUMBER") == True
+        assert is_unique_column(file, "permit_num") == True
 
         #Act and Assert - False
-        assert is_unique_column(file, "LEGAL NAME") == False
+        assert is_unique_column(file, "legal_name") == False
 
     def test_find_empty_columns(self):
 
@@ -104,7 +115,7 @@ class TestFileReader:
     def test_compare_two_colums(self):
 
         # Act + Assert case of non-similar columns
-        assert compare_two_colums(file, "ZIP CODE", "LEGAL NAME") == False
+        assert compare_two_colums(file, "zipcode", "legal_name") == False
 
         # Arrange for identical columns
         data_truth = {
