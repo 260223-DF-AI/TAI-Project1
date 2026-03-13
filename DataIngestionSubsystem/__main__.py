@@ -53,6 +53,7 @@ def main():
             # create dataframe from given file
             filepath = files[choice - 1].name
             df = load_data(f"DataIngestionSubsystem/data/{filepath}")
+            df, invalid_df = validate_normalize_data(df)
             df = clean_data(df)
             print()
             logger.info("Successful file upload and dataframe creation")
@@ -92,7 +93,7 @@ def main():
             logger.info("created and loaded locations table")
 
             logger.info("creating and loading permits table")
-            permitDF = create_permits_df(df)
+            permitDF = create_permits_df(df, locationDF)
             db.insert_into_permits(permitDF)
             # permitDf = df[["PERMIT NUMBER", "ACCOUNT NUMBER", "SITE NUMBER", "ISSUED DATE", "EXPIRATION DATE", "PAYMENT DATE"]]
             # permitDf.to_sql(name="permits", con=engine, index=False, if_exists = "replace", dtype={
@@ -103,6 +104,11 @@ def main():
             #     "EXPIRATION DATE": Date(),
             #     "PAYMENT DATE": Date()})
             logger.info("created and loaded permits table")
+
+            if not invalid_df.empty:
+                logger.info("creating and loading invalid_records table")
+                db.insert_into_invalid(invalid_df)
+                logger.info("created and loaded invalid_records table")
 
             db.commit_changes()
             
