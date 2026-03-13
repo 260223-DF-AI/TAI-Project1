@@ -6,12 +6,6 @@ from dotenv import load_dotenv
 import pandas as pd
 from sqlalchemy.orm import DeclarativeBase, Mapped, Mapped, mapped_column, relationship
 
-# build schema in sql and have python do the rest
-
-load_dotenv()
-_CS = os.getenv('CS')
-_engine = create_engine(_CS, echo=True)
-
 # query = f'SELECT * FROM {table_name}'
 # df = pd.read_sql(query, engine)
 
@@ -59,26 +53,22 @@ class Permit(Base):
     businesses: Mapped[list["Business"]] = relationship(back_populates='permits')
     sites: Mapped[list["Location"]] = relationship(back_populates="permits")
 
-Base.metadata.drop_all(_engine)
-Base.metadata.create_all(_engine)
-
 class Database:
     def __init__(self):
         load_dotenv()
         self._CS = os.getenv('CS')
         self._engine = create_engine(self._CS, echo=True)
+        Base.metadata.drop_all(self._engine)
+        Base.metadata.create_all(self._engine)
 
     def insert_into_businesses(self, df: pd.DataFrame):
         df.to_sql(name='businesses', con=self._engine, index=False, if_exists='append')
-        Base.metadata.create_all(self._engine)
 
     def insert_into_locations(self, df: pd.DataFrame):
         df.to_sql(name='locations', con=self._engine, index=False, if_exists='append')
-        Base.metadata.create_all(self._engine)
 
     def insert_into_permits(self, df: pd.DataFrame):
         df.to_sql(name='permits', con=self._engine, index=False, if_exists='append')
-        Base.metadata.create_all(self._engine)
 
     def commit_changes(self):
         Base.metadata.create_all(self._engine)
