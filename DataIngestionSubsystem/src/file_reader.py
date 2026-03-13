@@ -1,5 +1,4 @@
 import pandas as pd
-#from .logger import *
 
 def load_data(filepath):
     """
@@ -24,12 +23,14 @@ def load_data(filepath):
                     "ZIP CODE": "string",
                     "ADDRESS NUMBER": "string"
                 },
-                date_format = "%Y-%m-%dT%H:%M:%S.%f",
-                parse_dates=['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE']
+                convert_dates=['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE']
             )
+            df["ISSUED DATE"] = pd.to_datetime(df["ISSUED DATE"], format="%Y-%m-%dT%H:%M:%S.%f")
+            df["EXPIRATION DATE"] = pd.to_datetime(df["EXPIRATION DATE"], format="%Y-%m-%dT%H:%M:%S.%f")
+            df["PAYMENT DATE"] = pd.to_datetime(df["PAYMENT DATE"], format="%Y-%m-%dT%H:%M:%S.%f")
     except FileNotFoundError:
         # Eventually we will probably also want to log this
-        print(f"Given filepath ({filepath}) does not exist.")
+        raise FileNotFoundError
     # df_validated, df_invalid = validate_normalize_data(df)
     return df
 
