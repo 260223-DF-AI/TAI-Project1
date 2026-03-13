@@ -56,8 +56,9 @@ class Permit(Base):
 class Database:
     def __init__(self):
         load_dotenv()
-        self._CS = os.getenv('CS')
-        self._engine = create_engine(self._CS, echo=True)
+        self._CS = os.getenv('CS')        
+        self._engine = create_engine(self._CS)
+
         Base.metadata.drop_all(self._engine)
         Base.metadata.create_all(self._engine)
 

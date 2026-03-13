@@ -1,12 +1,23 @@
 import pandas as pd
 import pytest as pyt
 from src.file_reader import load_data, clean_data, is_unique_column, find_empty_columns, compare_two_colums, validate_normalize_data
-
+from pathlib import Path
 #Arrange
-file = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/small-chunk.csv")
-df_validation = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/testing_files/validation_testing.csv")
-unclean_file = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/testing_files/test_clean.csv")
-json_test = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/testing_files/file.json")
+# file = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/small-chunk.csv")
+# df_validation = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/testing_files/validation_testing.csv")
+# unclean_file = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/testing_files/test_clean.csv")
+# json_test = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/testing_files/file.json")
+
+# file_path = Path(__file__).resolve().parent.parent / "data" / "testing_files" / "small-chunk.csv"
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data" / "testing_files"
+SMALL_DIR = BASE_DIR / "data"
+
+file = load_data(str(SMALL_DIR / "small-chunk.csv"))
+df_validation = load_data(str(DATA_DIR / "validation_testing.csv"))
+unclean_file = load_data(str(DATA_DIR / "test_clean.csv"))
+json_test = load_data(str(DATA_DIR / "file.json"))
 
 class TestFileReader:
     
@@ -31,8 +42,8 @@ class TestFileReader:
 
         df_valid, df_invalid = validate_normalize_data(df_validation)
 
-        expected_valid = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/testing_files/valid.csv")
-        expected_invalid = load_data("/Users/andrewziets/Documents/Revature/TAI-Project1/DataIngestionSubsystem/data/testing_files/invalid.csv")
+        expected_valid = load_data(str(DATA_DIR  / "valid.csv"))
+        expected_invalid = load_data(str(DATA_DIR / "invalid.csv"))
 
         pd.testing.assert_frame_equal(expected_valid, df_valid)
         pd.testing.assert_frame_equal(expected_invalid, df_invalid)

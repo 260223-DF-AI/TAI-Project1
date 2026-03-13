@@ -1,5 +1,4 @@
 import pandas as pd
-#from .logger import *
 
 def load_data(filepath):
     """
@@ -33,7 +32,7 @@ def load_data(filepath):
                 df[col] = pd.to_datetime(df[col], format="%Y-%m-%dT%H:%M:%S.%f", errors='coerce')
     except FileNotFoundError:
         # Eventually we will probably also want to log this
-        print(f"Given filepath ({filepath}) does not exist.")
+        raise FileNotFoundError
     # df_validated, df_invalid = validate_normalize_data(df)
     return df
 
