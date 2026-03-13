@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import pandas as pd
 from sqlalchemy.orm import DeclarativeBase, Mapped, Mapped, mapped_column, relationship
 
+
 # build schema in sql and have python do the rest
 
 load_dotenv()
@@ -82,3 +83,29 @@ class Database:
 
     def commit_changes(self):
         Base.metadata.create_all(self._engine)
+    
+    def insert_into_invalid(self, invalid_df):
+        invalid_df.to_sql(
+            name="invalid_records",
+            con=self._engine,
+            index=False,
+            if_exists="replace",
+            dtype={
+                "ACCOUNT NUMBER": Integer(),
+                "LEGAL NAME": String(500),
+                "DOING BUSINESS AS NAME": String(500),
+                "SITE NUMBER": Integer(),
+                "LATITUDE": String(100),
+                "LONGITUDE": String(100),
+                "ADDRESS NUMBER": String(30),
+                "STREET DIRECTION": String(1),
+                "STREET": String(100),
+                "STREET TYPE": String(30),
+                "ZIP CODE": String(30),
+                "PERMIT NUMBER": Integer(),
+                "ISSUED DATE": String(50),
+                "EXPIRATION DATE": String(50),
+                "PAYMENT DATE": String(50),
+                "ERROR_REASON": String(500)
+            }
+        )
