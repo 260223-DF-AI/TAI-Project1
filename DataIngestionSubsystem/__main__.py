@@ -4,6 +4,22 @@ from dotenv import load_dotenv
 import os
 from sqlalchemy import Date, Integer, Numeric, String, create_engine
 #from psycopg2 import *
+import subprocess
+import sys
+
+def run_tests():
+    print("Running tests...")
+
+    result = subprocess.run(
+        [sys.executable, "-m", "pytest"],
+        cwd="DataIngestionSubsystem"
+    )
+
+    if result.returncode != 0:
+        print("Tests failed. Aborting program.")
+        sys.exit(1)
+
+    print("All tests passed.\n")
 
 def main():
     logger = setup_logger(__name__)
@@ -105,4 +121,5 @@ def main():
     
 
 if __name__ == "__main__":
+    run_tests()
     main()
