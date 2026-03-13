@@ -55,6 +55,7 @@ def main():
 
             # create dataframe from given file
             df = load_data(f"DataIngestionSubsystem/data/{filepath}")
+            df, invalid_df = validate_normalize_data(df)
             df = clean_data(df)
             print()
             logger.info("Successful file upload and dataframe creation")
@@ -76,11 +77,16 @@ def main():
             logger.info("Loaded 'locations' table with dataframe")
 
             logger.info("Attempting to create dataframe and load 'permits' table")
-            permitDF = create_permits_df(df)
+            permitDF = create_permits_df(df, locationDF)
             db.insert_into_permits(permitDF)
             logger.info("Loaded 'permits' table with dataframe")
 
-            #db.commit_changes()
+            if not invalid_df.empty:
+                logger.info("creating and loading invalid_records table")
+                db.insert_into_invalid(invalid_df)
+                logger.info("created and loaded invalid_records table")
+
+            db.commit_changes()
             
             logger.info("Successfully created and populated 3 tables")
             logger.info("Exiting")

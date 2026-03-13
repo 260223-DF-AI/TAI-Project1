@@ -97,8 +97,6 @@ def clean_data(df: pd.DataFrame):
         'LONGITUDE': 'longitude'
     }, inplace=True)
 
-    df['loc_id'] = [indx for indx, row in df.iterrows()]
-
     return df
 
 def create_businesses_df(df: pd.DataFrame):
@@ -107,9 +105,26 @@ def create_businesses_df(df: pd.DataFrame):
 
 def create_locations_df(df: pd.DataFrame):
     locDf = df.copy()
-    return locDf[['loc_id', 'site_num', 'address_num', 'street_dir', 'street', 'street_type', 'zipcode', 'latitude', 'longitude']].drop_duplicates()
+    locDf = locDf[['site_num', 'address_num', 'street_dir', 'street', 'street_type', 'zipcode', 'latitude', 'longitude']].drop_duplicates()
+    locDf['loc_id'] = [indx for indx, row in locDf.iterrows()]
+    return locDf
 
-def create_permits_df(df: pd.DataFrame):
+def create_permits_df(df: pd.DataFrame, locDf: pd.DataFrame):
+    location_cols = [
+        'site_num',
+        'address_num',
+        'street_dir',
+        'street',
+        'street_type',
+        'zipcode',
+        'latitude',
+        'longitude'
+    ]
+    df = df.merge(
+        locDf,
+        on=location_cols,
+        how="left"
+    )
     permDf = df.copy()
     return permDf[['permit_num', 'account_num', 'loc_id', 'opper_name', 'issued_date', 'expiration_date', 'payment_date']]
 
