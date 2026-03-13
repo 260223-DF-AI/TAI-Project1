@@ -4,6 +4,7 @@ def load_data(filepath):
     """
     Creates a DataFrame object from the given file, cleans it, then returns it
     """
+    df = pd.DataFrame()
     dotIndex = filepath.rfind('.')
     try:
         if(filepath[dotIndex + 1:].lower() == 'csv'):
@@ -17,17 +18,18 @@ def load_data(filepath):
                 parse_dates=['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE']
             )
         elif(filepath[dotIndex + 1:].lower() == 'json'):
+            # Read JSON file
             df = pd.read_json(
                 filepath,
                 dtype={
                     "ZIP CODE": "string",
                     "ADDRESS NUMBER": "string"
-                },
-                convert_dates=['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE']
+                }
             )
-            df["ISSUED DATE"] = pd.to_datetime(df["ISSUED DATE"], format="%Y-%m-%dT%H:%M:%S.%f")
-            df["EXPIRATION DATE"] = pd.to_datetime(df["EXPIRATION DATE"], format="%Y-%m-%dT%H:%M:%S.%f")
-            df["PAYMENT DATE"] = pd.to_datetime(df["PAYMENT DATE"], format="%Y-%m-%dT%H:%M:%S.%f")
+            # Parse dates after reading
+            date_cols = ['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE']
+            for col in date_cols:
+                df[col] = pd.to_datetime(df[col], format="%Y-%m-%dT%H:%M:%S.%f", errors='coerce')
     except FileNotFoundError:
         # Eventually we will probably also want to log this
         raise FileNotFoundError
@@ -41,16 +43,6 @@ def validate_normalize_data(df):
                    'LATITUDE', 'LONGITUDE']
 
     df[number_cols] = df[number_cols].apply(pd.to_numeric, errors='coerce')
-
-    # Ensure ZIP is string
-    # df['ZIP CODE'] = df['ZIP CODE'].astype(str)
-
-    # Ensure dates
-    # date_format = "%Y-%m-%dT%H:%M:%S.%f"
-    # date_cols = ['ISSUED DATE', 'EXPIRATION DATE', 'PAYMENT DATE']
-
-    #for col in date_cols:
-        #df[col] = pd.to_datetime(df[col], format=date_format, errors='coerce')
 
     # a Series of booleans which states whether all of the following statements are True
     valid_mask = (
